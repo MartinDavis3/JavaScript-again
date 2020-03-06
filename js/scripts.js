@@ -5,6 +5,7 @@
 
 // Single line comment
 
+
 // Basic assignment:
 var myVariable='38.987'
 console.log(  myVariable + 5);  //Ooop, one of these is a string so plus is concatenation
@@ -27,6 +28,9 @@ console.log( myVariable )
 /**
  *  Other types?
  */
+
+ 
+/**
 
  var myArrayOfDataTypes = [
     // Booleans:
@@ -85,5 +89,55 @@ document.body.appendChild( myDataList );
  //Get by ID:
 var myHeading = document.getElementById( 'my-heading' );
 myHeading.title = 'This is a heading.'; // Tooltip attribute.
-myHeading.style.color = 'darkgray'; //PLEASE avoid using inline styles... this is the CSS file's job!!
+// myHeading.style.color = 'darkgray'; //PLEASE avoid using inline styles... this is the CSS file's job!!
 myHeading.className = 'gray-text'; // Use classes instead!
+
+/**
+ * Events!
+ */
+
+
+// We can add event-listeners to a target element
+myHeading.addEventListener( 'mouseover', function ( event ) {
+    this.className = 'salmon-text'; // In an event the "this" keyword represents our element (myHeading)
+} );
+
+myHeading.addEventListener( 'mouseleave', function ( event ) {
+    this.className = 'indigo-text';
+} );
+
+
+myHeading.addEventListener( 'click', function ( event ) {
+    var bigClass = 'big-text';
+    if ( !this.className.includes( bigClass ) ) {
+        this.className += ' big-text'; // Concatenating a new class!
+        // Remember, you must have a space between classes.
+    }
+} );
+
+/**
+ * Let's make a function
+ */
+
+ function addTwoNumbers ( x, y ) {
+     x = Number( x ); // Enforce data-type (number).
+     y = Number( y );
+     return ( x + y );
+ };
+
+function currentDayString () {
+    var date = new Date();
+    var dateString = '';
+    dateString += date.getFullYear();
+    dateString += '.'; 
+    dateString += ( date.getMonth() + 1 );
+    dateString += '.'; 
+    dateString += ( date.getDay() + 1 );
+    return dateString;
+}
+
+console.log( 'The current date is: \r\n ' + currentDayString() ); // \r\n is return/newline.
+
+*/
+
+
