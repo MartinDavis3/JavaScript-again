@@ -1,1 +1,9 @@
 /* * { background: red;} */
+
+.gray-text {
+    color: darkgray;
+}
+
+.salmon-text {
+    color: salmon;
+}

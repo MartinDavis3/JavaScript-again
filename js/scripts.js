@@ -75,6 +75,15 @@ document.body.innerHTML += `<!-- Back ticks are used in JS for multi-line string
     </h2>
 `;
 
-// Add ALL of that to the body! Yay! We should be able to see it now!
+// Add ALL of our DATALIST to the body! Yay! We should be able to see it now!
 document.body.appendChild( myDataList );
 
+/**
+ * Collecting elements.
+ */
+
+ //Get by ID:
+var myHeading = document.getElementById( 'my-heading' );
+myHeading.title = 'This is a heading.'; // Tooltip attribute.
+myHeading.style.color = 'darkgray'; //PLEASE avoid using inline styles... this is the CSS file's job!!
+myHeading.className = 'gray-text'; // Use classes instead!
