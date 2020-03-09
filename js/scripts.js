@@ -244,9 +244,79 @@ function Person( name, age, hobbies ) {
     this.name = name;
     this.age = age;
     this.hobbies = hobbies;
+    this.sayGoodbye = function () {
+        document.body.innerHTML += `
+            <p>
+                This is <strong>` + this.name + `</strong>,
+                saying <em>goodbye</em>!
+            </p>
+        `;
+    };
 }
 
 var jerry = new Person( 'Jerry', 61, ['snowboarding', 'action movies', 'programming']);
 
 var sally = new Person( 'Sally', 36, ['daredevil biking', 'skydiving', 'teaching']);
+
+
+
+
+
+
+
+
+
+
+
+// We can add to the blueprint using "prototype", even after its initial declaration
+Person.prototype.introduction = function() {  // This is a method in our "Person" blueprint/prototype/class!
+    var hobbiesString = '<ul>';  // Set up for list HTML.
+    this.hobbies.forEach( function (value, index ) {
+        hobbiesString += '<li>' + value + '</li>';  // Loop through our hobbies and make a list for each.
+    } );
+    hobbiesString += '</ul>';  // We opened a UL in this string, so lets close it! (Concatenation!)
+    // Add HTML to the body.
+    document.body.innerHTML += `
+        <h2>` + this.name + `</h2>
+        <dl><!-- My name is: ` + this.name + ` -->
+            <dt>Age</dt>
+            <dd>` + this.age + `</dd>
+            <dt>Hobbies</dt>
+            <dd>` + hobbiesString /* We built the string above, using this.hobbies! "hobbiesString" is a local variable (born in the method, and it will die in the method.) */ + `</dd>
+        </dl>
+    `;
+}
+
+
+
+// extra prototype practice: a property.
+Person.prototype.nickname = '';
+
+jerry.nickname = 'The Big Jare';
+sally.nickname = 'Sallers';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
