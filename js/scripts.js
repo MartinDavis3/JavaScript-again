@@ -190,3 +190,63 @@ myNavButton.addEventListener( 'click', function ( event ) {
     // When clicked, add/remove the "nav-open" class (in HTML.)
     myNav.classList.toggle( 'nav-open' );
 } );
+
+
+/** Objects */
+
+
+/* JavaScript Object Notation (JSON) */
+var myObject = {  /* Valid JSON format. */
+    name: 'Jerry',
+    age: 61,
+    hobbies: [
+        'snowboarding',
+        'action movies'
+    ]
+};
+
+// Read whole object.
+console.log( myObject );
+
+// Extracting property values..
+console.log( 'object "name": ' + myObject.name );
+console.log( 'object "age": ' + myObject.age );
+console.log( 'object "hobbies": ' + myObject.hobbies[0] + ', ' + myObject.hobbies[1] );
+
+
+// add to hobbies array
+myObject.hobbies.push( 'programming' );
+console.log( 'Updated hobbies:' );
+console.log( myObject.hobbies );
+
+console.log( 'Updated object:' );
+console.log( myObject );
+
+/* Let's ramp things up with a method */
+
+
+
+
+var newObject = {
+    myNum: 5,
+    updateNum: function () {  // Here is a method! Note the new syntax, versus a function.
+        // Diffrence from a function?
+        this.myNum = this.myNum + 5;
+        return this.myNum;
+    }
+};
+
+
+
+/* constructor */
+
+function Person( name, age, hobbies ) {
+    this.name = name;
+    this.age = age;
+    this.hobbies = hobbies;
+}
+
+var jerry = new Person( 'Jerry', 61, ['snowboarding', 'action movies', 'programming']);
+
+var sally = new Person( 'Sally', 36, ['daredevil biking', 'skydiving', 'teaching']);
+
