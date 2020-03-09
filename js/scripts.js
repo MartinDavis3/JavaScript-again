@@ -7,6 +7,8 @@
 
 
 // Basic assignment:
+
+/*
 var myVariable='38.987'
 console.log(  myVariable + 5);  //Ooop, one of these is a string so plus is concatenation
 
@@ -55,6 +57,8 @@ console.log( myVariable )
  */
 
 // Create datalist.
+
+/*
 var myDataList = document.createElement( 'DL' );  // Won't show yet! We didn't tell it where to go.
 
 for (var i=0; i < myArrayOfDataTypes.length; i++)
@@ -87,6 +91,9 @@ document.body.appendChild( myDataList );
  */
 
  //Get by ID:
+
+
+ /*
 var myHeading = document.getElementById( 'my-heading' );
 myHeading.title = 'This is a heading.'; // Tooltip attribute.
 // myHeading.style.color = 'darkgray'; //PLEASE avoid using inline styles... this is the CSS file's job!!
@@ -98,6 +105,8 @@ myHeading.className = 'gray-text'; // Use classes instead!
 
 
 // We can add event-listeners to a target element
+
+/*
 myHeading.addEventListener( 'mouseover', function ( event ) {
     this.className = 'salmon-text'; // In an event the "this" keyword represents our element (myHeading)
 } );
@@ -118,7 +127,7 @@ myHeading.addEventListener( 'click', function ( event ) {
 /**
  * Let's make a function
  */
-
+/*
  function addTwoNumbers ( x, y ) {
      x = Number( x ); // Enforce data-type (number).
      y = Number( y );
@@ -137,7 +146,47 @@ function currentDayString () {
 }
 
 console.log( 'The current date is: \r\n ' + currentDayString() ); // \r\n is return/newline.
-
 */
+/* conditionals */
 
 
+
+
+
+
+
+
+
+
+// check for equivalency (type-agnostic)
+console.log( 1 == true );  //true
+console.log( 'Hello, World!' == true); // False
+console.log( -137 == true);  // False
+console.log( 'test' == 'test'); // True
+console.log( 36 == '36' );  //True
+console.log( 0 == false ); //True
+console.log( `test string` == "test string"); //True
+
+// value comparison including type
+console.log( 1 === true ); //false
+console.log( '' === true );  //false
+console.log( -137 === true); // False
+console.log( 'test' ===  'test'); // True
+console.log( 36 === '36' );  //False
+console.log( 0 === false ); //False
+console.log( `test string` === "test string"); //True
+
+
+// Hamburger menu
+
+// grab menu
+var myNav = document.querySelector( 'nav' );
+
+// and menu button
+var myNavButton = document.querySelector( '.menu-button' );
+
+
+myNavButton.addEventListener( 'click', function ( event ) {
+    // When clicked, add/remove the "nav-open" class (in HTML.)
+    myNav.classList.toggle( 'nav-open' );
+} );
