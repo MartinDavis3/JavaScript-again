@@ -67,19 +67,49 @@ function divideNums ( x, y ) {
     return ( x / y );
 }
 
-function myMath ( operation, x, y ) {
+function myMath ( operation ) {
     switch ( operation ) {
         case "add": 
-            return addNums( x, y ); // "return" ends the function, so do not need "break"
+            return addNums; // "return" ends the function, so do not need "break"
         case "subtract": 
-            return subtractNums( x, y );
+            return subtractNums;
         case "multiply": 
-            return multiplyNums( x, y );
+            return multiplyNums;
         case "divide": 
-            return divideNums( x, y );
+            return divideNums;
         default:
             return 'Invalid operation.';
     }
 }
 
-console.log( myMath( 'add', 64, 6));
+// console.log( myMath( 'add', 64, 6));
+// console.log( myMath( 'add' )( 64, 6 ) ); //the second set of parentheses is the values passed to the function returned by myMath.
+
+var result = myMath( 'divide' )(9,3);
+var newResult = myMath( 'multiply' )( 2, result );
+console.log( newResult );
+
+
+
+/*
+*Now let's try with ..... anonymous functions.
+*/
+
+function newTestFunction( myString ) {
+    myString = 'Entered string is: ' + myString;
+    return function( additionalString ) {
+        if ( additionalString != undefined ) {
+            myString += ', ' + additionalString;
+        }
+        return function( yetAnotherString ) {
+            if ( yetAnotherString != undefined ) {
+                myString += ', ' + yetAnotherString + '!!!';
+            }
+            return myString;
+        }
+    }
+}
+
+console.log( newTestFunction( 'A B C D E F G' )( 'H I J K L M N O P' )( 'Q R S T U V W X Y Z' ) );
+
+
