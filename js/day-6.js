@@ -46,3 +46,40 @@
  // myNestedFunction(); // Can we run the nested function!? Nope! It is not available globally if it was defined in a localized scope!
 
 
+
+ /**
+  * Functions returning functions.
+  */
+
+function addNums ( x, y ) {
+    return ( Number( x ) + Number( y ) );
+}
+
+function subtractNums ( x, y ) {
+    return ( x - y );
+}
+
+function multiplyNums ( x, y ) {
+    return ( x * y );
+}
+
+function divideNums ( x, y ) {
+    return ( x / y );
+}
+
+function myMath ( operation, x, y ) {
+    switch ( operation ) {
+        case "add": 
+            return addNums( x, y ); // "return" ends the function, so do not need "break"
+        case "subtract": 
+            return subtractNums( x, y );
+        case "multiply": 
+            return multiplyNums( x, y );
+        case "divide": 
+            return divideNums( x, y );
+        default:
+            return 'Invalid operation.';
+    }
+}
+
+console.log( myMath( 'add', 64, 6));
